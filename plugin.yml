@@ -1,0 +1,36 @@
+name: Ticket System GM
+main: fr.skyost.tickets.TicketSystemGM
+version: 1.3.1
+author: Skyost
+commands:
+ ticket:
+  aliases: [tk, tickets]
+  description: Send a ticket.
+  usage: Simply type /ticket <ticket here> or /tk to send a ticket.
+  permission: ticket.send
+ viewticket:
+  aliases: vtk
+  description: View a ticket.
+  usage: Simply type /viewticket <id> or /vtk <id> to view a ticket.
+  permission: ticket.receive
+ removeticket:
+  aliases: rtk
+  description: Remove a ticket.
+  usage: Simply type /removeticket <id> or /rtk <id> to clear a ticket.
+  permission: ticket.remove
+permissions:
+ ticket.*:
+  description: Give access to all commands.
+  children:
+   ticket.send: true
+   ticket.receive: true
+   ticket.remove: true
+ ticket.send:
+  default: true
+  description: Permision to send a ticket.
+ ticket.receive:
+  default: op
+  description: Permision to receive and view ticket(s).
+ ticket.remove:
+  default: op
+  description: Permision to remove ticket(s).
